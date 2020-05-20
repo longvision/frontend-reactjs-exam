@@ -31,7 +31,7 @@ function CheckoutScreen() {
           <InfoText>Alterar forma de pagamento</InfoText>
         </Return>
         <Message>
-          <IconImg alt="Github Guru" />
+          <IconImg />
           <Title>Adicione um novo cartão de crédito</Title>
         </Message>
         <Card>

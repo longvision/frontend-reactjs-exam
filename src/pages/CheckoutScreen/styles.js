@@ -30,11 +30,10 @@ export const WhitePanel = styled.div`
   background-color: #000;
 `;
 export const Arrow = styled.div`
-  display: flex;
   flex-direction: column;
   align-items: center;
-  height: 44px;
-  width: 44px;
+  height: 50px;
+  width: 50px;
 `;
 export const IconImg = styled.img`
   height: 50px;
@@ -51,7 +50,6 @@ export const Message = styled.div`
   justify-content: center;
   margin-bottom: 20px;
   align-items: center;
-  background-color: #000;
   margin-left: 64px;
   height: 50px;
   width: 257px;
@@ -69,10 +67,10 @@ export const Card = styled.div`
   flex-direction: row;
   display: flex;
 `;
-export const Title = styled.h1`
+export const Title = styled.p`
   color: white;
-  font-size: 20px;
-  font-weight: 600;
+  font-size: 24px;
+  font-weight: bold;
   text-align: left;
 `;
 export const InfoText = styled.p`
