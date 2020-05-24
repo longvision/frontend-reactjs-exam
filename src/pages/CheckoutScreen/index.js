@@ -65,14 +65,13 @@ function CheckoutScreen() {
             flexDirection: "column",
             display: "flex",
             width: "100%",
-            marginTop: 100,
+            marginTop: 50,
           }}
         >
           <form
             style={{
               flexDirection: "column",
               display: "flex",
-
               width: "100%",
               alignItems: "center",
               justifyContent: "center",
@@ -144,9 +143,7 @@ function CheckoutScreen() {
                   width: 246,
                   justifyContent: "center",
                   alignItems: "center",
-
                   fontSize: 22,
-
                   backgroundColor: "#de4b4b",
                 }}
                 size="small"

@@ -78,13 +78,12 @@ export const InputContainer = styled.div`
 `;
 export const SubmitContainer = styled.div`
   width: 100%;
-  margin-top: 30px;
   display: flex;
   justify-content: flex-end;
+  margin-top: 10px;
 `;
 export const SemiInputContainer = styled.div`
   width: 100%;
-
   display: flex;
   align-items: center;
   justify-content: space-between;
