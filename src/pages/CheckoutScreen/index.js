@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "react-credit-cards/es/styles-compiled.css";
 
 import { TextField, Button } from "@material-ui/core";
+import { NativeSelect } from "@material-ui/core";
 import {
   Container,
   WhitePanel,
@@ -27,13 +28,26 @@ import {
 import BreadCrumbs from "../../containers/breadcrumbs";
 import CreditCard from "../../components/CreditCard";
 
+import {
+  formatCreditCardNumber,
+  formatCVC,
+  formatExpirationDate,
+  formatFormData,
+} from "../../utils";
+
 function CheckoutScreen() {
-  const [cvc, setCvc] = useState("");
+  const [cvc, setCVC] = useState("");
   const [expiry, setExpiry] = useState("");
   const [focus, setFocus] = useState("");
   const [name, setName] = useState("");
   const [number, setNumber] = useState("");
+  const [issuer, setIssuer] = useState("");
 
+  const handleCallback = ({ issuer }, isValid) => {
+    if (isValid) {
+      setIssuer(issuer);
+    }
+  };
   return (
     <Container>
       <RedPanel>
@@ -46,14 +60,14 @@ function CheckoutScreen() {
           <Title>Adicione um novo cartão de crédito</Title>
         </Message>
       </RedPanel>
-      <Card>
+      <Card id="PaymentForm">
         <CreditCard
-          cvc="999"
-          expiry="0551"
-          focused="expiry"
-          name="Ricardo"
-          number="******************"
-          callback={() => {}}
+          cvc={cvc}
+          expiry={expiry}
+          focused={focus}
+          name={name}
+          number={number}
+          callback={() => handleCallback()}
         />
       </Card>
       <WhitePanel>
@@ -83,10 +97,15 @@ function CheckoutScreen() {
                   width: "99%",
                   fontSize: 22,
                 }}
-                name="number"
                 size="medium"
                 placeholder="Número do cartão"
-                type="input"
+                type="tel"
+                required
+                name="number"
+                onChange={(e) =>
+                  setNumber(formatCreditCardNumber(e.target.value))
+                }
+                onFocus={(e) => setFocus(e.target.name)}
               />
             </InputContainer>
             <InputContainer>
@@ -96,43 +115,70 @@ function CheckoutScreen() {
 
                   fontSize: 22,
                 }}
-                name="number"
+                name="name"
                 placeholder="Nome (Igual ao cartão)"
                 type="input"
+                required
+                onChange={(e) => setName(e.target.value)}
+                onFocus={(e) => setFocus(e.target.name)}
               />
             </InputContainer>
             <SemiInputContainer>
               <div style={{ width: "48%" }}>
                 <TextField
-                  name="number"
                   style={{ alignItems: "flex-start" }}
                   fullWidth={true}
-                  type="input"
                   placeholder="Validade"
+                  pattern="\d\d/\d\d"
+                  type="input"
+                  required
+                  name="expiry"
+                  onChange={(e) =>
+                    setExpiry(formatExpirationDate(e.target.value))
+                  }
+                  onFocus={(e) => setFocus(e.target.name)}
                 />
               </div>
               <div style={{ width: "48%" }}>
                 <TextField
-                  name="number"
                   fullWidth={true}
                   style={{ alignItems: "flex-end" }}
-                  type="input"
+                  type="tel"
                   placeholder="CVV"
+                  className="form-control"
+                  pattern="\d{3,4}"
+                  name="cvc"
+                  required
+                  onChange={(e) => setCVC(formatCVC(e.target.value))}
+                  onFocus={(e) => setFocus(e.target.name)}
                 />
               </div>
             </SemiInputContainer>
 
             <InputContainer>
-              <TextField
+              <NativeSelect
                 style={{
                   width: "99%",
-
                   fontSize: 22,
                 }}
                 name="number"
                 placeholder="Número do parcelas"
                 type="input"
-              />
+                standard
+              >
+                <option value="12">12x R$1.000,00 sem juros</option>
+                <option value="11">11x R$ 990,00 sem juros</option>
+                <option value="10">10x R$950,00 sem juros</option>
+                <option value="9">9x R$1.000,00 sem juros</option>
+                <option value="8">8x R$1.000,00 sem juros</option>
+                <option value="7">7x R$1.000,00 sem juros</option>
+                <option value="6">6x R$1.000,00 sem juros</option>
+                <option value="5">5x R$1.000,00 sem juros</option>
+                <option value="4">4x R$1.000,00 sem juros</option>
+                <option value="3">3x R$1.000,00 sem juros</option>
+                <option value="2">2x R$1.000,00 sem juros</option>
+                <option value="1">1x R$1.000,00 sem juros</option>
+              </NativeSelect>
             </InputContainer>
 
             <SubmitContainer>
