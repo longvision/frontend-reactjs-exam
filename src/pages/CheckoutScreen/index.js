@@ -1,32 +1,37 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import "react-credit-cards/es/styles-compiled.css";
-
+import Card from "react-credit-cards";
 import { TextField, Button } from "@material-ui/core";
-import { NativeSelect } from "@material-ui/core";
+import { NativeSelect, Grid } from "@material-ui/core";
+
+import Input from "../../components/Input";
+
 import {
   Container,
   WhitePanel,
-  Form,
   Title,
   IconImg,
   Arrow,
   RedPanel,
   Return,
+  Return1,
   InfoText,
   SubmitContainer,
   SemiInputContainer1,
   SemiInputContainer,
+  FormContainer,
   SensibleInputContainer,
+  Form,
+  BreadcrumbsContainer,
   Message,
   Label,
   Label1,
   Label2,
   SemiInput,
+  CreditCard,
   InputContainer,
-  Card,
 } from "./styles";
 import BreadCrumbs from "../../containers/breadcrumbs";
-import CreditCard from "../../components/CreditCard";
 
 import {
   formatCreditCardNumber,
@@ -35,7 +40,7 @@ import {
   formatFormData,
 } from "../../utils";
 
-function CheckoutScreen() {
+function CheckoutScreen(props) {
   const [cvc, setCVC] = useState("");
   const [expiry, setExpiry] = useState("");
   const [focus, setFocus] = useState("");
@@ -51,46 +56,50 @@ function CheckoutScreen() {
   return (
     <Container>
       <RedPanel>
-        <Return>
-          <Arrow />
-          <InfoText>Alterar forma de pagamento</InfoText>
-        </Return>
-        <Message>
-          <IconImg />
-          <Title>Adicione um novo cartão de crédito</Title>
-        </Message>
+        <div
+          style={
+            {
+              // height: "100%",
+              // flexDirection: "column",
+            }
+          }
+        >
+          {window.innerWidth > 359 ? (
+            <Return>
+              <Arrow />
+              <InfoText>Alterar forma de pagamento</InfoText>
+            </Return>
+          ) : (
+            <Return1>
+              <InfoText>
+                <strong>Etapa 2</strong> de 3
+              </InfoText>
+            </Return1>
+          )}
+          <Message>
+            <IconImg />
+            <Title>Adicione um novo cartão de crédito</Title>
+          </Message>
+        </div>
       </RedPanel>
-      <Card id="PaymentForm">
-        <CreditCard
+
+      <CreditCard id="PaymentForm">
+        <Card
           cvc={cvc}
           expiry={expiry}
           focused={focus}
           name={name}
           number={number}
-          callback={() => handleCallback()}
+          callback={handleCallback}
         />
-      </Card>
+      </CreditCard>
+
       <WhitePanel>
-        <BreadCrumbs />
-        <div
-          style={{
-            alignItems: "center",
-            justifyContent: "center",
-            flexDirection: "column",
-            display: "flex",
-            width: "100%",
-            marginTop: 50,
-          }}
-        >
-          <form
-            style={{
-              flexDirection: "column",
-              display: "flex",
-              width: "100%",
-              alignItems: "center",
-              justifyContent: "center",
-            }}
-          >
+        <BreadcrumbsContainer>
+          <BreadCrumbs />
+        </BreadcrumbsContainer>
+        <FormContainer key="Payment">
+          <Form>
             <InputContainer>
               <TextField
                 style={{
@@ -112,13 +121,13 @@ function CheckoutScreen() {
               <TextField
                 style={{
                   width: "99%",
-
                   fontSize: 22,
                 }}
-                name="name"
-                placeholder="Nome (Igual ao cartão)"
+                size="medium"
+                placeholder="Nome (Igual ao do cartão)"
                 type="input"
                 required
+                name="name"
                 onChange={(e) => setName(e.target.value)}
                 onFocus={(e) => setFocus(e.target.name)}
               />
@@ -126,35 +135,40 @@ function CheckoutScreen() {
             <SemiInputContainer>
               <div style={{ width: "48%" }}>
                 <TextField
+                  style={{
+                    width: "99%",
+                    fontSize: 22,
+                  }}
+                  size="medium"
                   style={{ alignItems: "flex-start" }}
-                  fullWidth={true}
                   placeholder="Validade"
-                  pattern="\d\d/\d\d"
                   type="input"
+                  fullWidth={true}
                   required
-                  name="expiry"
-                  onChange={(e) =>
-                    setExpiry(formatExpirationDate(e.target.value))
-                  }
+                  name="name"
+                  onChange={(e) => setExpiry(e.target.value)}
                   onFocus={(e) => setFocus(e.target.name)}
                 />
               </div>
               <div style={{ width: "48%" }}>
                 <TextField
-                  fullWidth={true}
-                  style={{ alignItems: "flex-end" }}
-                  type="tel"
+                  style={{
+                    width: "99%",
+                    fontSize: 22,
+                  }}
+                  size="medium"
+                  style={{ alignItems: "flex-start" }}
                   placeholder="CVV"
-                  className="form-control"
-                  pattern="\d{3,4}"
-                  name="cvc"
+                  type="tel"
+                  fullWidth={true}
                   required
-                  onChange={(e) => setCVC(formatCVC(e.target.value))}
+                  name="cvc"
+                  onChange={(e) => setExpiry(e.target.value)}
                   onFocus={(e) => setFocus(e.target.name)}
                 />
               </div>
             </SemiInputContainer>
-
+            <input type="hidden" name="issuer" value={issuer} />
             <InputContainer>
               <NativeSelect
                 style={{
@@ -164,7 +178,6 @@ function CheckoutScreen() {
                 name="number"
                 placeholder="Número do parcelas"
                 type="input"
-                standard
               >
                 <option value="12">12x R$1.000,00 sem juros</option>
                 <option value="11">11x R$ 990,00 sem juros</option>
@@ -200,8 +213,8 @@ function CheckoutScreen() {
                 CONTINUAR
               </Button>
             </SubmitContainer>
-          </form>
-        </div>
+          </Form>
+        </FormContainer>
       </WhitePanel>
     </Container>
   );

@@ -28,14 +28,17 @@ export const RedPanel = styled.div`
   align-items: center;
   justify-content: center;
   display: flex;
-  height: 239px;
+  height: 239x;
 
   background-color: #de4b4b;
 
   @media only screen and (min-width: 361px) {
+    min-width: 352px;
+    width: 352px;
     flex-direction: column;
-    width: 100%;
-    height: 100%;
+    align-items: flex-start;a
+    display: flex;
+
     background-color: #de4b4b;
   }
 `;
@@ -44,7 +47,7 @@ export const CreditCard = styled.div`
   max-width: 360px;
   flex-direction: column;
   justify-content: center;
-  margin-top: -80px;
+  margin-top: -70px;
   flex-direction: row;
   display: flex;
 
@@ -64,27 +67,25 @@ export const WhitePanel = styled.div`
   align-items: center;
   width: 100%;
   height: 100%;
-
+  padding: 30px;
   @media only screen and (min-width: 361px) {
     display: flex;
     flex-direction: column;
-
-    margin: 30px;
-
+    margin-left: 91px;
+    width: 100%;
     height: 100%;
     background-color: #fff;
   }
 `;
 export const Arrow = styled.div`
   flex-direction: column;
-
+  align-items: center;
   height: 50px;
   width: 50px;
 `;
 export const IconImg = styled.img`
   height: 50px;
   width: 50px;
-
   margin-right: 15px;
   background-color: green;
 `;
@@ -98,69 +99,19 @@ export const BreadcrumbsContainer = styled.div`
 export const Message = styled.div`
   flex-direction: row;
   display: flex;
-  align-items: center;
   justify-content: center;
-  margin-top: -80px;
-  margin-left: 34px;
-  height: 100%;
-  @media only screen and (min-width: 361px) {
-    flex-direction: row;
-    display: flex;
-    justify-content: center;
-
-    align-items: center;
-    margin-left: 64px;
-    height: 50px;
-    width: 257px;
-  }
+  margin-bottom: 20px;
+  align-items: center;
+  margin-left: 64px;
+  height: 50px;
+  width: 257px;
 `;
 export const Return = styled.div`
   height: 48px;
   flex-direction: row;
-  justify-content: flex-start;
-  align-items: flex-start;
   display: flex;
-`;
-export const Return1 = styled.div`
-  flex-direction: row;
-  margin-top: 0px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  @media only screen and (min-width: 361px) {
-    display: none;
-  }
-`;
-export const FormContainer = styled.div`
-  width: 100%;
-  flex-direction: column;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: 50px;
-
-  @media only screen and (min-width: 361px) {
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    display: flex;
-    margin-left: 120px;
-    width: 100%;
-  }
-`;
-export const Form = styled.div`
-  width: 80%;
-
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  @media only screen and (min-width: 361px) {
-    flex-direction: column;
-    display: flex;
-    width: 100%;
-    align-items: center;
-    justify-content: center;
-  }
+  margin-bottom: 24px;
+  margin-top: 53px;
 `;
 
 export const InputContainer = styled.div`
@@ -173,9 +124,6 @@ export const SubmitContainer = styled.div`
   display: flex;
   justify-content: flex-end;
   margin-top: 10px;
-  @media only screen and (min-width: 361px) {
-    justify-content: center;
-  }
 `;
 export const SemiInputContainer = styled.div`
   width: 100%;
@@ -214,23 +162,17 @@ export const InputField = styled.input`
   font-size: 18px;
 `;
 export const Title = styled.p`
-  font-size: 16px;
-  font-weight: bold;
-  width: 165px;
   color: white;
-  @media only screen and (min-width: 361px) {
-    color: white;
-    font-size: 24px;
-    font-weight: bold;
-    text-align: left;
-  }
+  font-size: 24px;
+  font-weight: bold;
+  text-align: left;
 `;
 export const InfoText = styled.p`
   color: #ffffff;
   opacity: 1;
   font-size: 13px;
   letter-spacing: -0.01px;
-  text-align: center;
+  text-align: left;
   width: 185px;
   height: 16px;
 `;
