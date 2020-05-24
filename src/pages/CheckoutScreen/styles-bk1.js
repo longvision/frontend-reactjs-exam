@@ -36,7 +36,7 @@ export const RedPanel = styled.div`
     min-width: 352px;
     width: 352px;
     flex-direction: column;
-    align-items: flex-start;a
+    align-items: flex-start;
     display: flex;
 
     background-color: #de4b4b;

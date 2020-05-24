@@ -34,6 +34,9 @@ export const RedPanel = styled.div`
 
   @media only screen and (min-width: 361px) {
     flex-direction: column;
+    display: flex;
+    align-items: flex-start;
+
     width: 100%;
     height: 100%;
     background-color: #de4b4b;
@@ -169,12 +172,12 @@ export const InputContainer = styled.div`
   margin-bottom: 40px;
 `;
 export const SubmitContainer = styled.div`
-  width: 100%;
-  display: flex;
-  justify-content: flex-end;
-  margin-top: 10px;
+  justify-content: center;
   @media only screen and (min-width: 361px) {
-    justify-content: center;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 10px;
   }
 `;
 export const SemiInputContainer = styled.div`

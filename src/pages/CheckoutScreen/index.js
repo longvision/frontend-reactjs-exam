@@ -56,31 +56,22 @@ function CheckoutScreen(props) {
   return (
     <Container>
       <RedPanel>
-        <div
-          style={
-            {
-              // height: "100%",
-              // flexDirection: "column",
-            }
-          }
-        >
+        <Return>
           {window.innerWidth > 359 ? (
-            <Return>
+            <>
               <Arrow />
               <InfoText>Alterar forma de pagamento</InfoText>
-            </Return>
+            </>
           ) : (
-            <Return1>
-              <InfoText>
-                <strong>Etapa 2</strong> de 3
-              </InfoText>
-            </Return1>
+            <InfoText>
+              <strong>Etapa 2</strong> de 3
+            </InfoText>
           )}
-          <Message>
-            <IconImg />
-            <Title>Adicione um novo cartão de crédito</Title>
-          </Message>
-        </div>
+        </Return>
+        <Message>
+          <IconImg />
+          <Title>Adicione um novo cartão de crédito</Title>
+        </Message>
       </RedPanel>
 
       <CreditCard id="PaymentForm">
