@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import "react-credit-cards/es/styles-compiled.css";
 import Card from "react-credit-cards";
 import { TextField, Button } from "@material-ui/core";
@@ -47,6 +47,35 @@ function CheckoutScreen(props) {
   const [name, setName] = useState("");
   const [number, setNumber] = useState("");
   const [issuer, setIssuer] = useState("");
+  const size = useWindowSize();
+
+  function useWindowSize() {
+    const isClient = typeof window === "object";
+
+    function getSize() {
+      return {
+        width: isClient ? window.innerWidth : undefined,
+        height: isClient ? window.innerHeight : undefined,
+      };
+    }
+
+    const [windowSize, setWindowSize] = useState(getSize);
+
+    useEffect(() => {
+      if (!isClient) {
+        return false;
+      }
+
+      function handleResize() {
+        setWindowSize(getSize());
+      }
+
+      window.addEventListener("resize", handleResize);
+      return () => window.removeEventListener("resize", handleResize);
+    }, [getSize, isClient]); // Empty array ensures that effect is only run on mount and unmount
+
+    return windowSize;
+  }
 
   const handleCallback = ({ issuer }, isValid) => {
     if (isValid) {
@@ -57,7 +86,7 @@ function CheckoutScreen(props) {
     <Container>
       <RedPanel>
         <Return>
-          {window.innerWidth > 359 ? (
+          {size.width > 359 ? (
             <>
               <Arrow />
               <InfoText>Alterar forma de pagamento</InfoText>
