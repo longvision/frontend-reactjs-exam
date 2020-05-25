@@ -14,6 +14,7 @@ import {
   RedPanel,
   Return,
   InfoText,
+  InfoText1,
   SubmitContainer,
   SemiInputContainer,
   FormContainer,
@@ -78,7 +79,7 @@ function CheckoutScreen(props) {
     <Container key="Payment">
       <RedPanel>
         <Return>
-          {size.width > 359 ? (
+          {size.width > 360 ? (
             <div
               style={{
                 flexDirection: "row",
@@ -90,14 +91,35 @@ function CheckoutScreen(props) {
                 marginLeft: 80,
               }}
             >
-              <ChevronLeftIcon style={{ alignItems: "left", color: "#fff" }} />
+              <ChevronLeftIcon
+                style={{ alignItems: "flex-start", color: "#fff" }}
+              />
 
               <InfoText>Alterar forma de pagamento</InfoText>
             </div>
           ) : (
-            <InfoText>
-              <strong>Etapa 2</strong> de 3
-            </InfoText>
+            <div
+              style={{
+                flexDirection: "row",
+                display: "flex",
+                flex: 1,
+
+                width: "100%",
+                alignItems: "center",
+              }}
+            >
+              <ChevronLeftIcon
+                style={{
+                  alignItems: "flex-start",
+                  color: "#fff",
+                  width: 50,
+                  height: 44,
+                }}
+              />
+              <InfoText1>
+                <strong>Etapa 2</strong> de 3
+              </InfoText1>
+            </div>
           )}
         </Return>
         <Message>

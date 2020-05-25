@@ -1,46 +1,27 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-  margin-left: 277px;
-  margin-top: 65px;
-  display: flex;
-  max-width: 360px;
-  width: 100%;
-  flex-direction: column;
-  height: 239px;
-  border-width: 3px;
   @media only screen and (min-width: 361px) {
-    display: flex;
-    min-width: 360px;
-    max-width: 1024px;
-    width: 100%;
+    justify-content: space-between;
     flex-direction: row;
-    height: 596px;
-    background-color: #fff;
-    border-width: 3px;
+    align-items: center;
+    display: flex;
+    width: 100%;
+    height: 100px;
   }
 `;
 
-export const RedPanel = styled.div`
-  max-width: 360px;
-  width: 100%;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  display: flex;
-  height: 239px;
-
-  background-color: #de4b4b;
-
+export const MenuItems = styled.div`
   @media only screen and (min-width: 361px) {
-    flex-direction: column;
+    flex-direction: row;
     display: flex;
-    align-items: flex-start;
-    justify-content: flex-start;
-
+    margin-left: 300px;
+    align-items: center;
+    justify-content: space-between;
     width: 100%;
     height: 100%;
-    background-color: #de4b4b;
+
+    margin-right: 277px;
   }
 `;
 export const CreditCard = styled.div`
@@ -73,10 +54,9 @@ export const WhitePanel = styled.div`
     display: flex;
     flex-direction: column;
 
-    margin-top: 30px;
-    margin-bottom: 60px;
+    margin: 30px;
 
-    height: 500px;
+    height: 596px;
     background-color: #fff;
   }
 `;
