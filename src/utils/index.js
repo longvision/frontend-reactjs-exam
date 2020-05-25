@@ -1,5 +1,5 @@
 import Payment from "payment";
-
+import { useState, useEffect } from "react";
 function clearNumber(value = "") {
   return value.replace(/\D+/g, "");
 }
@@ -61,4 +61,32 @@ export function formatExpirationDate(value) {
 
 export function formatFormData(data) {
   return Object.keys(data).map((d) => `${d}: ${data[d]}`);
+}
+
+export function useWindowSize() {
+  const isClient = typeof window === "object";
+
+  function getSize() {
+    return {
+      width: isClient ? window.innerWidth : undefined,
+      height: isClient ? window.innerHeight : undefined,
+    };
+  }
+
+  const [windowSize, setWindowSize] = useState(getSize);
+
+  useEffect(() => {
+    if (!isClient) {
+      return false;
+    }
+
+    function handleResize() {
+      setWindowSize(getSize());
+    }
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, [getSize, isClient]); // Empty array ensures that effect is only run on mount and unmount
+
+  return windowSize;
 }

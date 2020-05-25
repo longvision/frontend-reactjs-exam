@@ -1,29 +1,26 @@
 import React from "react";
 
-// import {
-//   Container,
-//   Form,
-//   Title,
-//   IconImg,
-//   RedPanel,
-// } from "../CheckoutScreen/styles";
+import {
+  Container,
+  DeskContainer,
+  //   Title,
+  //   IconImg,
+  //   RedPanel,
+} from "./styles";
 import NavBar from "../../components/NavBar";
 import CheckoutScreen from "../CheckoutScreen/index";
+import { useWindowSize } from "../../utils";
+const ShopScreen = () => {
+  const size = useWindowSize();
 
-function ShopScreen() {
   return (
-    <div style={{ width: 1920, height: 1080, backgroundColor: "#F7F7F7" }}>
+    <Container>
       <NavBar />
-      <div
-        style={{
-          flexDirection: "column",
-          display: "flex",
-        }}
-      >
+      <DeskContainer>
         <CheckoutScreen />
-      </div>
-    </div>
+      </DeskContainer>
+    </Container>
   );
-}
+};
 
 export default ShopScreen;

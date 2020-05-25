@@ -22,9 +22,9 @@ function Breadcrumbs() {
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
-          width: 22,
-          height: 22,
-          backgroundColor: "red",
+          width: 20,
+          height: 20,
+          backgroundColor: "#de4b4b",
           display: "flex",
           marginRight: 8,
         }}
@@ -39,11 +39,11 @@ function Breadcrumbs() {
         />
       </div>
       <div>
-        <a style={{ fontSize: 13, color: "red" }}> Carrinho </a>
+        <a style={{ fontSize: 13, color: "#de4b4b" }}> Carrinho </a>
       </div>
       <div>
         <ChevronRightIcon
-          style={{ color: "red", marginLeft: 24, marginRight: 24 }}
+          style={{ color: "#de4b4b", marginLeft: 23, marginRight: 23 }}
         />
       </div>
       <div
@@ -54,9 +54,9 @@ function Breadcrumbs() {
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
-          width: 22,
-          height: 22,
-          backgroundColor: "red",
+          width: 20,
+          height: 20,
+          backgroundColor: "#de4b4b",
 
           marginRight: 8,
           display: "flex",
@@ -70,22 +70,22 @@ function Breadcrumbs() {
             display: "flex",
             justifyContent: "center",
             alignItems: "center",
-            width: 20,
-            height: 20,
+            width: 18,
+            height: 18,
             backgroundColor: "white",
 
             display: "flex",
           }}
         >
-          <p style={{ color: "red", fontSize: 15 }}>2</p>
+          <p style={{ color: "#de4b4b", fontSize: 15 }}>2</p>
         </div>
       </div>
       <div>
-        <a style={{ fontSize: 13, color: "red" }}>Confirmação</a>
+        <a style={{ fontSize: 13, color: "#de4b4b" }}>Confirmação</a>
       </div>
       <div>
         <ChevronRightIcon
-          style={{ color: "red", marginLeft: 24, marginRight: 24 }}
+          style={{ color: "#de4b4b", marginLeft: 23, marginRight: 23 }}
         />
       </div>
       <div
@@ -96,9 +96,9 @@ function Breadcrumbs() {
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
-          width: 22,
-          height: 22,
-          backgroundColor: "red",
+          width: 20,
+          height: 20,
+          backgroundColor: "#de4b4b",
           marginRight: 8,
           display: "flex",
         }}
@@ -111,18 +111,18 @@ function Breadcrumbs() {
             display: "flex",
             justifyContent: "center",
             alignItems: "center",
-            width: 20,
-            height: 20,
+            width: 18,
+            height: 18,
             backgroundColor: "white",
 
             display: "flex",
           }}
         >
-          <p style={{ color: "red", fontSize: 15 }}>3</p>
+          <p style={{ color: "#de4b4b", fontSize: 15 }}>3</p>
         </div>
       </div>
       <div>
-        <a style={{ fontSize: 13, color: "red" }}>Confirmação</a>
+        <a style={{ fontSize: 13, color: "#de4b4b" }}>Confirmação</a>
       </div>
     </div>
   );

@@ -1,6 +1,8 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
+  display: none;
+
   @media only screen and (min-width: 361px) {
     justify-content: space-between;
     flex-direction: row;

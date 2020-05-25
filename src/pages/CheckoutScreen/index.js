@@ -25,12 +25,11 @@ import {
   InputContainer,
 } from "./styles";
 import BreadCrumbs from "../../components/Breadcrumbs";
-
 import {
   formatCreditCardNumber,
   formatCVC,
   formatExpirationDate,
-  formatFormData,
+  useWindowSize,
 } from "../../utils";
 
 function CheckoutScreen(props) {
@@ -42,44 +41,16 @@ function CheckoutScreen(props) {
   const [issuer, setIssuer] = useState("");
   const size = useWindowSize();
 
-  function useWindowSize() {
-    const isClient = typeof window === "object";
-
-    function getSize() {
-      return {
-        width: isClient ? window.innerWidth : undefined,
-        height: isClient ? window.innerHeight : undefined,
-      };
-    }
-
-    const [windowSize, setWindowSize] = useState(getSize);
-
-    useEffect(() => {
-      if (!isClient) {
-        return false;
-      }
-
-      function handleResize() {
-        setWindowSize(getSize());
-      }
-
-      window.addEventListener("resize", handleResize);
-      return () => window.removeEventListener("resize", handleResize);
-    }, [getSize, isClient]); // Empty array ensures that effect is only run on mount and unmount
-
-    return windowSize;
-  }
-
   const handleCallback = ({ issuer }, isValid) => {
     if (isValid) {
       setIssuer(issuer);
     }
   };
   return (
-    <Container key="Payment">
+    <Container>
       <RedPanel>
         <Return>
-          {size.width > 360 ? (
+          {size.width > 361 ? (
             <div
               style={{
                 flexDirection: "row",

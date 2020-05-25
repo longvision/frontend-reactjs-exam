@@ -1,14 +1,13 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-  margin-left: 277px;
-  margin-top: 65px;
   display: flex;
   max-width: 360px;
   width: 100%;
   flex-direction: column;
   height: 239px;
   border-width: 3px;
+  background-color: #fff;
   @media only screen and (min-width: 361px) {
     display: flex;
     min-width: 360px;
@@ -72,11 +71,12 @@ export const WhitePanel = styled.div`
   @media only screen and (min-width: 361px) {
     display: flex;
     flex-direction: column;
-
-    margin-top: 30px;
-    margin-bottom: 60px;
-
-    height: 500px;
+    margin-left: -80px;
+    padding-left: 168px;
+    padding-top: 53px;
+    padding-right: 64px;
+    width: 672px;
+    height: 543px;
     background-color: #fff;
   }
 `;
