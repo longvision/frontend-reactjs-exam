@@ -9,15 +9,15 @@ import {
 } from "./styles";
 import NavBar from "../../components/NavBar";
 import CheckoutScreen from "../CheckoutScreen/index";
-import { useWindowSize } from "../../utils";
-const ShopScreen = () => {
-  const size = useWindowSize();
+import SideFeed from "../../components/SideFeed";
 
+const ShopScreen = () => {
   return (
     <Container>
       <NavBar />
       <DeskContainer>
         <CheckoutScreen />
+        <SideFeed />
       </DeskContainer>
     </Container>
   );

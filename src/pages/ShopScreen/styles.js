@@ -13,10 +13,9 @@ export const DeskContainer = styled.div`
   width: 360px;
   height: 725px;
   @media only screen and (min-width: 361px) {
-    flex-direction: column;
     display: flex;
-    margin-left: 277px;
-    margin-top: 65px;
-    background-color: #f7f7f7;
+    flex-direction: row;
+    width: 100%;
+    height: 100%;
   }
 `;

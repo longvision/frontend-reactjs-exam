@@ -17,6 +17,8 @@ export const Container = styled.div`
     height: 596px;
     background-color: #fff;
     border-width: 3px;
+    margin-left: 230px;
+    margin-top 65px;
   }
 `;
 
@@ -71,10 +73,10 @@ export const WhitePanel = styled.div`
   @media only screen and (min-width: 361px) {
     display: flex;
     flex-direction: column;
-    margin-left: -80px;
-    padding-left: 168px;
+    margin-left: -50px;
+
     padding-top: 53px;
-    padding-right: 64px;
+
     width: 672px;
     height: 543px;
     background-color: #fff;
@@ -96,7 +98,7 @@ export const BreadcrumbsContainer = styled.div`
   display: none;
 
   @media only screen and (min-width: 361px) {
-    display: block;
+    display: flex;
   }
 `;
 export const Message = styled.div`
@@ -113,8 +115,8 @@ export const Message = styled.div`
     width: auto;
     align-items: center;
     margin-left: 80px;
-    margin-top: 54px;
-    height: 50px;
+    margin-top: 74px;
+    height: 20px;
   }
 `;
 export const Return = styled.div`
@@ -129,6 +131,7 @@ export const Return = styled.div`
     justify-content: flex-start;
     align-items: center;
     display: flex;
+    margin-top: 20px;
   }
 `;
 
@@ -145,8 +148,6 @@ export const FormContainer = styled.div`
     justify-content: center;
     flex-direction: column;
     display: flex;
-    margin-left: 40px;
-    width: 100%;
   }
 `;
 export const Form = styled.div`
