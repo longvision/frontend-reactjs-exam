@@ -171,6 +171,8 @@ export const InputContainer = styled.div`
 `;
 export const SubmitContainer = styled.div`
   justify-content: center;
+  margin-top: -25px;
+  margin-bottom: 25px;
   @media only screen and (min-width: 361px) {
     width: 100%;
     display: flex;
