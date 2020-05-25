@@ -2,7 +2,7 @@ import React from "react";
 
 import demo from "../../assets/demo.svg";
 import logo from "../../assets/logo.svg";
-import { Container, MenuItems } from "./styles";
+import { Container, MenuItems, Item } from "./styles";
 //
 function NavBar() {
   return (
@@ -20,11 +20,21 @@ function NavBar() {
         <img src={demo} />
       </div>
       <MenuItems>
-        <div>Roupas</div>
-        <div>Moda Masculina</div>
-        <div>Moda Feminina</div>
-        <div>Looks</div>
-        <div>Promoções</div>
+        <Item>
+          <p />
+        </Item>
+        <Item>
+          <p />
+        </Item>
+        <Item>
+          <p />
+        </Item>
+        <Item>
+          <p />
+        </Item>
+        <Item>
+          <p />
+        </Item>
       </MenuItems>
     </Container>
   );

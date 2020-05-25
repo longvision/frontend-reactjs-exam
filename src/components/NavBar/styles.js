@@ -8,6 +8,7 @@ export const Container = styled.div`
     display: flex;
     width: 100%;
     height: 100px;
+    background-color: #fff;
   }
 `;
 
@@ -17,11 +18,20 @@ export const MenuItems = styled.div`
     display: flex;
     margin-left: 300px;
     align-items: center;
-    justify-content: space-between;
-    width: 100%;
+    justify-content: stretch;
+    width: 572px;
     height: 100%;
 
     margin-right: 277px;
+  }
+`;
+export const Item = styled.div`
+  @media only screen and (min-width: 361px) {
+    margin-right: 18px;
+    background: #3c3c3c;
+
+    width: 100px;
+    border-radius: 5px;
   }
 `;
 export const CreditCard = styled.div`
