@@ -1,37 +1,29 @@
-import React, { useState, useEffect, useRef } from "react";
-import "react-credit-cards/es/styles-compiled.css";
+import React, { useState, useEffect } from "react";
+import "react-credit-cards/lib/styles.scss";
 import Card from "react-credit-cards";
 import { TextField, Button } from "@material-ui/core";
-import { NativeSelect, Grid } from "@material-ui/core";
+import { NativeSelect } from "@material-ui/core";
+import ChevronLeftIcon from "@material-ui/icons/ChevronLeft";
 
-import Input from "../../components/Input";
-
+import logo from "../../assets/novo-cartao.svg";
 import {
   Container,
   WhitePanel,
   Title,
   IconImg,
-  Arrow,
   RedPanel,
   Return,
-  Return1,
   InfoText,
   SubmitContainer,
-  SemiInputContainer1,
   SemiInputContainer,
   FormContainer,
-  SensibleInputContainer,
   Form,
   BreadcrumbsContainer,
   Message,
-  Label,
-  Label1,
-  Label2,
-  SemiInput,
   CreditCard,
   InputContainer,
 } from "./styles";
-import BreadCrumbs from "../../containers/breadcrumbs";
+import BreadCrumbs from "../../components/Breadcrumbs";
 
 import {
   formatCreditCardNumber,
@@ -83,14 +75,25 @@ function CheckoutScreen(props) {
     }
   };
   return (
-    <Container>
+    <Container key="Payment">
       <RedPanel>
         <Return>
           {size.width > 359 ? (
-            <>
-              <Arrow />
+            <div
+              style={{
+                flexDirection: "row",
+                display: "flex",
+                marginTop: 53,
+                justifyContent: "flex-start",
+                width: "100%",
+                alignItems: "center",
+                marginLeft: 80,
+              }}
+            >
+              <ChevronLeftIcon style={{ alignItems: "left", color: "#fff" }} />
+
               <InfoText>Alterar forma de pagamento</InfoText>
-            </>
+            </div>
           ) : (
             <InfoText>
               <strong>Etapa 2</strong> de 3
@@ -98,12 +101,12 @@ function CheckoutScreen(props) {
           )}
         </Return>
         <Message>
-          <IconImg />
+          <IconImg src={logo} />
           <Title>Adicione um novo cartão de crédito</Title>
         </Message>
       </RedPanel>
 
-      <CreditCard id="PaymentForm">
+      <CreditCard className="App-payment">
         <Card
           cvc={cvc}
           expiry={expiry}
@@ -118,9 +121,9 @@ function CheckoutScreen(props) {
         <BreadcrumbsContainer>
           <BreadCrumbs />
         </BreadcrumbsContainer>
-        <FormContainer key="Payment">
+        <FormContainer>
           <Form>
-            <InputContainer>
+            <InputContainer className="form-group">
               <TextField
                 style={{
                   width: "99%",
@@ -130,6 +133,7 @@ function CheckoutScreen(props) {
                 placeholder="Número do cartão"
                 type="tel"
                 required
+                pattern="[\d| ]{16,22}"
                 name="number"
                 onChange={(e) =>
                   setNumber(formatCreditCardNumber(e.target.value))
@@ -158,15 +162,19 @@ function CheckoutScreen(props) {
                   style={{
                     width: "99%",
                     fontSize: 22,
+                    alignItems: "flex-start",
                   }}
                   size="medium"
-                  style={{ alignItems: "flex-start" }}
                   placeholder="Validade"
-                  type="input"
+                  type="tel"
+                  className="form-control"
                   fullWidth={true}
+                  pattern="\d\d/\d\d"
                   required
-                  name="name"
-                  onChange={(e) => setExpiry(e.target.value)}
+                  name="expiry"
+                  onChange={(e) =>
+                    setExpiry(formatExpirationDate(e.target.value))
+                  }
                   onFocus={(e) => setFocus(e.target.name)}
                 />
               </div>
@@ -175,15 +183,15 @@ function CheckoutScreen(props) {
                   style={{
                     width: "99%",
                     fontSize: 22,
+                    alignItems: "flex-start",
                   }}
                   size="medium"
-                  style={{ alignItems: "flex-start" }}
                   placeholder="CVV"
                   type="tel"
                   fullWidth={true}
                   required
                   name="cvc"
-                  onChange={(e) => setExpiry(e.target.value)}
+                  onChange={(e) => setCVC(formatCVC(e.target.value))}
                   onFocus={(e) => setFocus(e.target.name)}
                 />
               </div>
@@ -224,10 +232,10 @@ function CheckoutScreen(props) {
                   alignItems: "center",
                   fontSize: 22,
                   backgroundColor: "#de4b4b",
+                  color: "#fff",
                 }}
                 size="small"
                 variant="contained"
-                color="primary"
                 value="Submit"
               >
                 CONTINUAR

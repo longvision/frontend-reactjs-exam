@@ -15,7 +15,6 @@ export const Container = styled.div`
     width: 100%;
     flex-direction: row;
     height: 596px;
-    border-color: #000;
 
     border-width: 3px;
   }
@@ -36,6 +35,7 @@ export const RedPanel = styled.div`
     flex-direction: column;
     display: flex;
     align-items: flex-start;
+    justify-content: flex-start;
 
     width: 100%;
     height: 100%;
@@ -65,7 +65,7 @@ export const WhitePanel = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 100%;
+  width: 672px;
   height: 100%;
 
   @media only screen and (min-width: 361px) {
@@ -74,7 +74,7 @@ export const WhitePanel = styled.div`
 
     margin: 30px;
 
-    height: 100%;
+    height: 596px;
     background-color: #fff;
   }
 `;
@@ -89,7 +89,6 @@ export const IconImg = styled.img`
   width: 50px;
 
   margin-right: 15px;
-  background-color: green;
 `;
 export const BreadcrumbsContainer = styled.div`
   display: none;
@@ -108,13 +107,12 @@ export const Message = styled.div`
   height: 100%;
   @media only screen and (min-width: 361px) {
     flex-direction: row;
-    display: flex;
     justify-content: center;
-
+    width: auto;
     align-items: center;
-    margin-left: 64px;
+    margin-left: 80px;
+    margin-top: 54px;
     height: 50px;
-    width: 257px;
   }
 `;
 export const Return = styled.div`
@@ -123,17 +121,14 @@ export const Return = styled.div`
   justify-content: flex-start;
   align-items: flex-start;
   display: flex;
-`;
-export const Return1 = styled.div`
-  flex-direction: row;
-  margin-top: 0px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   @media only screen and (min-width: 361px) {
-    display: none;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    display: flex;
   }
 `;
+
 export const FormContainer = styled.div`
   width: 100%;
   flex-direction: column;
@@ -147,7 +142,7 @@ export const FormContainer = styled.div`
     justify-content: center;
     flex-direction: column;
     display: flex;
-    margin-left: 120px;
+    margin-left: 40px;
     width: 100%;
   }
 `;
@@ -160,7 +155,7 @@ export const Form = styled.div`
   @media only screen and (min-width: 361px) {
     flex-direction: column;
     display: flex;
-    width: 100%;
+    width: 440px;
     align-items: center;
     justify-content: center;
   }
@@ -224,8 +219,11 @@ export const Title = styled.p`
   @media only screen and (min-width: 361px) {
     color: white;
     font-size: 24px;
+    width: 215px;
+    display: flex;
     font-weight: bold;
     text-align: left;
+    align-items: flex-end;
   }
 `;
 export const InfoText = styled.p`
@@ -234,6 +232,6 @@ export const InfoText = styled.p`
   font-size: 13px;
   letter-spacing: -0.01px;
   text-align: center;
-  width: 185px;
+
   height: 16px;
 `;
