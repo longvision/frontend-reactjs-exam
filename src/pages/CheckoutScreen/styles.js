@@ -179,8 +179,7 @@ export const SubmitContainer = styled.div`
   @media only screen and (min-width: 361px) {
     width: 100%;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: flex-end;
     margin-top: 10px;
   }
 `;
