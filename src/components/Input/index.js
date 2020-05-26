@@ -10,7 +10,6 @@ import {
   formatCreditCardNumber,
   formatCVC,
   formatExpirationDate,
-  useWindowSize,
 } from "../../utils";
 
 export default function PaymentInputs({ field }) {
@@ -78,6 +77,9 @@ export default function PaymentInputs({ field }) {
 
               dispatch(CreditcardActions.setName(e.target.value));
             }}
+            onBlur={(e) => {
+              checkCompleteName();
+            }}
             onFocus={(e) => dispatch(CreditcardActions.setFocus(e.target.name))}
           />
         )}
@@ -91,13 +93,10 @@ export default function PaymentInputs({ field }) {
               borderRight: 0,
               outline: "none",
             }}
-            size="medium"
-            type="tel"
             required
+            placeholder="Número do cartão"
             value={number}
-            name="number"
             {...getCardNumberProps({
-              placeholder: "Número do cartão",
               onChange: (e) =>
                 dispatch(
                   CreditcardActions.setNumber(
@@ -120,21 +119,16 @@ export default function PaymentInputs({ field }) {
                 borderRight: 0,
                 outline: "none",
               }}
-              size="medium"
-              type="tel"
-              className="form-control"
-              fullWidth={true}
               value={expiry}
               name="expiry"
               {...getExpiryDateProps({
-                placeholder: "Validade",
-
-                onChange: (e) =>
+                onChange: (e) => {
                   dispatch(
                     CreditcardActions.setExpiry(
                       formatExpirationDate(e.target.value)
                     )
-                  ),
+                  );
+                },
               })}
               onFocus={(e) =>
                 dispatch(CreditcardActions.setFocus(e.target.name))
@@ -159,9 +153,8 @@ export default function PaymentInputs({ field }) {
               value={cvc}
               required
               name="cvc"
+              placeholder="CVV"
               {...getCVCProps({
-                placeholder: "CVV",
-
                 onChange: (e) =>
                   dispatch(CreditcardActions.setCVC(formatCVC(e.target.value))),
               })}
@@ -185,13 +178,25 @@ export default function PaymentInputs({ field }) {
               }}
               name="split"
               type="input"
+              onChange={(e) => {
+                !e.target.value &&
+                  setCustomError({
+                    ...customError,
+                    split: "Insira o número de parcelas",
+                  });
+              }}
               onFocus={(e) =>
                 dispatch(CreditcardActions.setFocus(e.target.name))
               }
+              onBlur={(e) =>
+                !e.target.value &&
+                setCustomError({
+                  ...customError,
+                  split: "Insira o número de parcelas",
+                })
+              }
             >
-              <option value="" disabled>
-                Número de parcelas
-              </option>
+              <option value="">Número de parcelas</option>
               <option value="12">12x R$1.000,00 sem juros</option>
               <option value="11">11x R$ 990,00 sem juros</option>
               <option value="10">10x R$950,00 sem juros</option>
@@ -214,6 +219,9 @@ export default function PaymentInputs({ field }) {
       )}
       {customError.name && (
         <span style={{ fontSize: 13, color: "red" }}>{customError.name}</span>
+      )}
+      {customError.split && (
+        <span style={{ fontSize: 13, color: "red" }}>{customError.split}</span>
       )}
     </div>
   );
