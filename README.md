@@ -1,5 +1,7 @@
 # Installing the project in your machine:
 
+[Live project](https://longvision.github.io/frontend-reactjs-exam/)
+
 ## 0- (Install node.js and npm in your machine)
 
 Download
@@ -24,7 +26,7 @@ Run the following command to install 'node_modules' in your machine:
 
 Copy the content of the file located inside of the following path: ["/node_modules/react-credit-cards/lib/styles.scss"](https://github.com/longvision/frontend-reactjs-exam/blob/master/node_modules/react-credit-cards/lib/styles.scss) and paste inside the same directory of your local project, replacing all the content that is located there by the one your copied above.
 
-## 4- Running the project:
+## 4- Run the project:
 
 Use this command:
 `yarn start`
@@ -35,30 +37,10 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 The page will reload if you make edits.<br />
 You will also see any lint errors in the console.
 
-### `yarn test`
+## 5- This project was done in 2 viewport width sizes: 1920px and 360px.
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `yarn build`
-
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+So when checking for those views maybe you need to enter in Google Chrome Devtools Inspector twice. (F12 on windows)
+You can also select Galaxy S5 to view and inspect the project in the correct width: 360px;
 
 ## Learn More
 
