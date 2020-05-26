@@ -153,7 +153,6 @@ export default function PaymentInputs({ field }) {
                 outline: "none",
               }}
               type="tel"
-              fullWidth={true}
               value={cvc}
               required
               name="cvc"
@@ -179,26 +178,25 @@ export default function PaymentInputs({ field }) {
                 borderLeft: 0,
                 borderRight: 0,
                 borderBottomWidth: 5,
+
                 outline: "none",
               }}
               name="split"
               type="input"
+              placeholder="Número de parcelas"
               onChange={(e) => {
-                !e.target.value &&
-                  setCustomError({
-                    ...customError,
-                    split: "Insira o número de parcelas",
-                  });
+                !e.target.value
+                  ? setCustomError({
+                      ...customError,
+                      split: "Insira o número de parcelas",
+                    })
+                  : setCustomError({
+                      ...customError,
+                      split: "",
+                    });
               }}
               onFocus={(e) =>
                 dispatch(CreditcardActions.setFocus(e.target.name))
-              }
-              onBlur={(e) =>
-                !e.target.value &&
-                setCustomError({
-                  ...customError,
-                  split: "Insira o número de parcelas",
-                })
               }
             >
               <option value="">Número de parcelas</option>
