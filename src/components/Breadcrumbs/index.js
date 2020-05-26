@@ -16,7 +16,6 @@ function Breadcrumbs() {
     >
       <div
         style={{
-          alignItems: "center",
           borderRadius: 100,
           flexDirection: "row",
           display: "flex",
@@ -25,7 +24,6 @@ function Breadcrumbs() {
           width: 20,
           height: 20,
           backgroundColor: "#de4b4b",
-          display: "flex",
           marginRight: 8,
         }}
       >

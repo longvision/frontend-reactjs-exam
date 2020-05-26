@@ -8,9 +8,8 @@ function NavBar() {
   return (
     <Container>
       <LogoItems>
-        <img src={logo} />
-
-        <img src={demo} />
+        <img src={logo} alt="logo" />
+        <img src={demo} alt="demoshop" />
       </LogoItems>
       <MenuItems>
         <Item>

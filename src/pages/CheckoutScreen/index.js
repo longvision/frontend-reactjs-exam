@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { useSelector } from "react-redux";
 import "react-credit-cards/lib/styles.scss";
 import Card from "react-credit-cards";
-import { TextField, Button } from "@material-ui/core";
+import { Button } from "@material-ui/core";
 
 import ChevronLeftIcon from "@material-ui/icons/ChevronLeft";
 
