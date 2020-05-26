@@ -64,7 +64,7 @@ export default function PaymentInputs({ field }) {
               borderTop: 0,
               borderLeft: 0,
               borderRight: 0,
-              borderBottomWidth: 2,
+              borderBottomWidth: 1.7,
               outline: "none",
             }}
             size="medium"
@@ -92,7 +92,7 @@ export default function PaymentInputs({ field }) {
               borderTop: 0,
               borderLeft: 0,
               borderRight: 0,
-              borderBottomWidth: 2,
+              borderBottomWidth: 1.7,
               outline: "none",
             }}
             required
@@ -119,7 +119,7 @@ export default function PaymentInputs({ field }) {
                 borderTop: 0,
                 borderLeft: 0,
                 borderRight: 0,
-                borderBottomWidth: 2,
+                borderBottomWidth: 1.7,
                 outline: "none",
               }}
               value={expiry}
@@ -150,7 +150,7 @@ export default function PaymentInputs({ field }) {
                 borderTop: 0,
                 borderLeft: 0,
                 borderRight: 0,
-                borderBottomWidth: 2,
+                borderBottomWidth: 1.7,
                 outline: "none",
               }}
               type="tel"
@@ -170,7 +170,7 @@ export default function PaymentInputs({ field }) {
           </div>
         )}
         {field === "split" && (
-          <>
+          <div style={{ width: "100%", marginTop: -25 }}>
             <NativeSelect
               id="select"
               style={{
@@ -179,8 +179,8 @@ export default function PaymentInputs({ field }) {
                 borderTop: 0,
                 borderLeft: 0,
                 borderRight: 0,
-                borderBottomWidth: 2,
-
+                borderBottomWidth: 1.7,
+                borderColor: "#C3C3C3",
                 outline: "none",
               }}
               name="split"
@@ -215,7 +215,7 @@ export default function PaymentInputs({ field }) {
               <option value="2">2x R$1.000,00 sem juros</option>
               <option value="1">1x R$1.000,00 sem juros</option>
             </NativeSelect>
-          </>
+          </div>
         )}
       </div>
 
