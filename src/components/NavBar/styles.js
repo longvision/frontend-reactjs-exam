@@ -57,7 +57,7 @@ export const MenuItems = styled.div`
 export const Item = styled.div`
   @media only screen and (min-width: 361px) {
     margin-right: 35px;
-    background: #3c3c3c;
+    background: #c3c3c3;
 
     width: 100px;
     border-radius: 5px;

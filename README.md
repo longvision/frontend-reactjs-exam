@@ -1,10 +1,33 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Installing the project in your machine:
 
-## Available Scripts
+## 0- (Install node.js and npm in your machine)
 
-In the project directory, you can run:
+Download
 
-### `yarn start`
+You’ll need to have Node >= 8.10 on your local development machine (but it’s not required on the server). You can use [nvm (macOS/Linux)](https://github.com/nvm-sh/nvm#installation) or [nvm-windows](https://github.com/coreybutler/nvm-windows#node-version-manager-nvm-for-windows) to switch Node versions between different projects.
+
+Install Node.js and npm.
+
+## 1- Copy/Download the [Project](https://github.com/longvision/frontend-reactjs-exam) from Github
+
+Clone this repo to your local folder with the following command:
+
+`git clone https://github.com/longvision/frontend-reactjs-exam.git`
+
+## 2- Install the project locally
+
+Run the following command to install 'node_modules' in your machine:
+
+`yarn install`
+
+## 3- Replace styles.scss local file to improve the design:
+
+Copy the content of the file located inside of the following path: ["/node_modules/react-credit-cards/lib/styles.scss"](https://github.com/longvision/frontend-reactjs-exam/blob/master/node_modules/react-credit-cards/lib/styles.scss) and paste inside the same directory of your local project, replacing all the content that is located there by the one your copied above.
+
+## 4- Running the project:
+
+Use this command:
+`yarn start`
 
 Runs the app in the development mode.<br />
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
@@ -66,3 +89,7 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 ### `yarn build` fails to minify
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+
+```
+
+```
