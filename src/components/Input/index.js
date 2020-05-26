@@ -141,37 +141,33 @@ export default function PaymentInputs({ field }) {
           </div>
         )}
         {field === "cvc" && (
-          <>
-            <div style={{ width: "100%" }}>
-              <input
-                style={{
-                  width: "99%",
-                  fontSize: 20,
-                  alignItems: "center",
-                  borderTop: 0,
-                  borderLeft: 0,
-                  borderRight: 0,
-                  borderBottomWidth: 2,
-                  outline: "none",
-                }}
-                type="tel"
-                value={cvc}
-                required
-                name="cvc"
-                placeholder="CVV"
-                {...getCVCProps({
-                  placeholder: "CVV",
-                  onChange: (e) =>
-                    dispatch(
-                      CreditcardActions.setCVC(formatCVC(e.target.value))
-                    ),
-                })}
-                onFocus={(e) =>
-                  dispatch(CreditcardActions.setFocus(e.target.name))
-                }
-              />
-            </div>
-          </>
+          <div style={{ width: "100%" }}>
+            <input
+              style={{
+                width: "99%",
+                fontSize: 20,
+                alignItems: "center",
+                borderTop: 0,
+                borderLeft: 0,
+                borderRight: 0,
+                borderBottomWidth: 2,
+                outline: "none",
+              }}
+              type="tel"
+              value={cvc}
+              required
+              name="cvc"
+              placeholder="CVV"
+              {...getCVCProps({
+                placeholder: "CVV",
+                onChange: (e) =>
+                  dispatch(CreditcardActions.setCVC(formatCVC(e.target.value))),
+              })}
+              onFocus={(e) =>
+                dispatch(CreditcardActions.setFocus(e.target.name))
+              }
+            />
+          </div>
         )}
         {field === "split" && (
           <>
