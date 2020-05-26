@@ -1,0 +1,30 @@
+{
+  "files": {
+    "main.css": "/frontend-reactjs-exam/static/css/main.5ecd60fb.chunk.css",
+    "main.js": "/frontend-reactjs-exam/static/js/main.0522072f.chunk.js",
+    "main.js.map": "/frontend-reactjs-exam/static/js/main.0522072f.chunk.js.map",
+    "runtime-main.js": "/frontend-reactjs-exam/static/js/runtime-main.eaf5b250.js",
+    "runtime-main.js.map": "/frontend-reactjs-exam/static/js/runtime-main.eaf5b250.js.map",
+    "static/css/2.be55d809.chunk.css": "/frontend-reactjs-exam/static/css/2.be55d809.chunk.css",
+    "static/js/2.e712b442.chunk.js": "/frontend-reactjs-exam/static/js/2.e712b442.chunk.js",
+    "static/js/2.e712b442.chunk.js.map": "/frontend-reactjs-exam/static/js/2.e712b442.chunk.js.map",
+    "index.html": "/frontend-reactjs-exam/index.html",
+    "precache-manifest.fb5e5f428ea5405149963e3b9ce7c607.js": "/frontend-reactjs-exam/precache-manifest.fb5e5f428ea5405149963e3b9ce7c607.js",
+    "service-worker.js": "/frontend-reactjs-exam/service-worker.js",
+    "static/css/2.be55d809.chunk.css.map": "/frontend-reactjs-exam/static/css/2.be55d809.chunk.css.map",
+    "static/css/main.5ecd60fb.chunk.css.map": "/frontend-reactjs-exam/static/css/main.5ecd60fb.chunk.css.map",
+    "static/js/2.e712b442.chunk.js.LICENSE.txt": "/frontend-reactjs-exam/static/js/2.e712b442.chunk.js.LICENSE.txt",
+    "static/media/check.svg": "/frontend-reactjs-exam/static/media/check.a52b4e6b.svg",
+    "static/media/demo.svg": "/frontend-reactjs-exam/static/media/demo.c46a900e.svg",
+    "static/media/logo.svg": "/frontend-reactjs-exam/static/media/logo.063b7dcb.svg",
+    "static/media/novo-cartao.svg": "/frontend-reactjs-exam/static/media/novo-cartao.57af19a0.svg",
+    "static/media/side.png": "/frontend-reactjs-exam/static/media/side.dcd6dc8e.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.eaf5b250.js",
+    "static/css/2.be55d809.chunk.css",
+    "static/js/2.e712b442.chunk.js",
+    "static/css/main.5ecd60fb.chunk.css",
+    "static/js/main.0522072f.chunk.js"
+  ]
+}
