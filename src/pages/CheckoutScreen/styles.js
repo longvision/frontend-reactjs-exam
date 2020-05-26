@@ -174,10 +174,13 @@ export const SubmitContainer = styled.div`
   justify-content: center;
   margin-top: -25px;
   margin-bottom: 25px;
+  display: flex;
+  align-items: center;
   @media only screen and (min-width: 361px) {
     width: 100%;
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
+    align-items: center;
     margin-top: 10px;
   }
 `;
