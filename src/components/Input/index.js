@@ -96,9 +96,9 @@ export default function PaymentInputs({ field }) {
               outline: "none",
             }}
             required
-            placeholder="Número do cartão"
             value={number}
             {...getCardNumberProps({
+              placeholder: "Número do cartão",
               onChange: (e) =>
                 dispatch(
                   CreditcardActions.setNumber(
@@ -125,6 +125,7 @@ export default function PaymentInputs({ field }) {
               value={expiry}
               name="expiry"
               {...getExpiryDateProps({
+                placeholder: "Validade",
                 onChange: (e) => {
                   dispatch(
                     CreditcardActions.setExpiry(
@@ -158,6 +159,7 @@ export default function PaymentInputs({ field }) {
               name="cvc"
               placeholder="CVV"
               {...getCVCProps({
+                placeholder: "CVV",
                 onChange: (e) =>
                   dispatch(CreditcardActions.setCVC(formatCVC(e.target.value))),
               })}

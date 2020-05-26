@@ -29,6 +29,7 @@ function Breadcrumbs() {
       >
         <img
           src={check}
+          alt=""
           style={{
             justifyContent: "center",
             alignItems: "center",
@@ -37,7 +38,7 @@ function Breadcrumbs() {
         />
       </div>
       <div>
-        <a style={{ fontSize: 13, color: "#de4b4b" }}> Carrinho </a>
+        <p style={{ fontSize: 13, color: "#de4b4b" }}> Carrinho </p>
       </div>
       <div>
         <ChevronRightIcon
@@ -51,13 +52,10 @@ function Breadcrumbs() {
           flexDirection: "row",
           display: "flex",
           justifyContent: "center",
-          alignItems: "center",
           width: 20,
           height: 20,
           backgroundColor: "#de4b4b",
-
           marginRight: 8,
-          display: "flex",
         }}
       >
         <div
@@ -67,19 +65,16 @@ function Breadcrumbs() {
             flexDirection: "row",
             display: "flex",
             justifyContent: "center",
-            alignItems: "center",
             width: 18,
             height: 18,
             backgroundColor: "white",
-
-            display: "flex",
           }}
         >
           <p style={{ color: "#de4b4b", fontSize: 15 }}>2</p>
         </div>
       </div>
       <div>
-        <a style={{ fontSize: 13, color: "#de4b4b" }}>Confirmação</a>
+        <p style={{ fontSize: 13, color: "#de4b4b" }}>Confirmação</p>
       </div>
       <div>
         <ChevronRightIcon
@@ -91,9 +86,7 @@ function Breadcrumbs() {
           alignItems: "center",
           borderRadius: 100,
           flexDirection: "row",
-          display: "flex",
           justifyContent: "center",
-          alignItems: "center",
           width: 20,
           height: 20,
           backgroundColor: "#de4b4b",
@@ -108,19 +101,16 @@ function Breadcrumbs() {
             flexDirection: "row",
             display: "flex",
             justifyContent: "center",
-            alignItems: "center",
             width: 18,
             height: 18,
             backgroundColor: "white",
-
-            display: "flex",
           }}
         >
           <p style={{ color: "#de4b4b", fontSize: 15 }}>3</p>
         </div>
       </div>
       <div>
-        <a style={{ fontSize: 13, color: "#de4b4b" }}>Confirmação</a>
+        <p style={{ fontSize: 13, color: "#de4b4b" }}>Confirmação</p>
       </div>
     </div>
   );
