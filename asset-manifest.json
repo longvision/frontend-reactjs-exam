@@ -1,19 +1,19 @@
 {
   "files": {
     "main.css": "/frontend-reactjs-exam/static/css/main.5ecd60fb.chunk.css",
-    "main.js": "/frontend-reactjs-exam/static/js/main.0522072f.chunk.js",
-    "main.js.map": "/frontend-reactjs-exam/static/js/main.0522072f.chunk.js.map",
+    "main.js": "/frontend-reactjs-exam/static/js/main.b99c7006.chunk.js",
+    "main.js.map": "/frontend-reactjs-exam/static/js/main.b99c7006.chunk.js.map",
     "runtime-main.js": "/frontend-reactjs-exam/static/js/runtime-main.eaf5b250.js",
     "runtime-main.js.map": "/frontend-reactjs-exam/static/js/runtime-main.eaf5b250.js.map",
     "static/css/2.3076a447.chunk.css": "/frontend-reactjs-exam/static/css/2.3076a447.chunk.css",
-    "static/js/2.e712b442.chunk.js": "/frontend-reactjs-exam/static/js/2.e712b442.chunk.js",
-    "static/js/2.e712b442.chunk.js.map": "/frontend-reactjs-exam/static/js/2.e712b442.chunk.js.map",
+    "static/js/2.5e0516f7.chunk.js": "/frontend-reactjs-exam/static/js/2.5e0516f7.chunk.js",
+    "static/js/2.5e0516f7.chunk.js.map": "/frontend-reactjs-exam/static/js/2.5e0516f7.chunk.js.map",
     "index.html": "/frontend-reactjs-exam/index.html",
-    "precache-manifest.ca232a7f87bc2f27cb8508f5ca1a8f51.js": "/frontend-reactjs-exam/precache-manifest.ca232a7f87bc2f27cb8508f5ca1a8f51.js",
+    "precache-manifest.8cce74ce4f128668aa24cf588ed0d22b.js": "/frontend-reactjs-exam/precache-manifest.8cce74ce4f128668aa24cf588ed0d22b.js",
     "service-worker.js": "/frontend-reactjs-exam/service-worker.js",
     "static/css/2.3076a447.chunk.css.map": "/frontend-reactjs-exam/static/css/2.3076a447.chunk.css.map",
     "static/css/main.5ecd60fb.chunk.css.map": "/frontend-reactjs-exam/static/css/main.5ecd60fb.chunk.css.map",
-    "static/js/2.e712b442.chunk.js.LICENSE.txt": "/frontend-reactjs-exam/static/js/2.e712b442.chunk.js.LICENSE.txt",
+    "static/js/2.5e0516f7.chunk.js.LICENSE.txt": "/frontend-reactjs-exam/static/js/2.5e0516f7.chunk.js.LICENSE.txt",
     "static/media/check.svg": "/frontend-reactjs-exam/static/media/check.a52b4e6b.svg",
     "static/media/demo.svg": "/frontend-reactjs-exam/static/media/demo.c46a900e.svg",
     "static/media/logo.svg": "/frontend-reactjs-exam/static/media/logo.063b7dcb.svg",
@@ -23,8 +23,8 @@
   "entrypoints": [
     "static/js/runtime-main.eaf5b250.js",
     "static/css/2.3076a447.chunk.css",
-    "static/js/2.e712b442.chunk.js",
+    "static/js/2.5e0516f7.chunk.js",
     "static/css/main.5ecd60fb.chunk.css",
-    "static/js/main.0522072f.chunk.js"
+    "static/js/main.b99c7006.chunk.js"
   ]
 }
