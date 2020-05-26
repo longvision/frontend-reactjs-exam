@@ -24,7 +24,7 @@ Run the following command to install 'node_modules' in your machine:
 
 ## 3- Replace styles.scss local file to improve the design:
 
-Copy the content of the file located inside of the following path: ["/node_modules/react-credit-cards/lib/styles.scss"](https://github.com/longvision/frontend-reactjs-exam/blob/master/node_modules/react-credit-cards/lib/styles.scss) and paste inside the same directory of your local project, replacing all the content that is located there by the one your copied above.
+Copy the content of the file located inside of the following path: ["/node_modules/react-credit-cards/lib/styles-compiled.css"](https://github.com/longvision/frontend-reactjs-exam/blob/master/node_modules/react-credit-cards/lib/styles-compiled.css) and paste inside the same directory of your local project, replacing all the content that is located there by the one your copied above.
 
 ## 4- Run the project:
 

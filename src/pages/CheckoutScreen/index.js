@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useSelector } from "react-redux";
-import "react-credit-cards/lib/styles.scss";
+import "react-credit-cards/lib/styles-compiled.css";
 import Card from "react-credit-cards";
 import { Button } from "@material-ui/core";
 
