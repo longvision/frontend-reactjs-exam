@@ -1,12 +1,6 @@
 import React from "react";
 
-import {
-  Container,
-  DeskContainer,
-  //   Title,
-  //   IconImg,
-  //   RedPanel,
-} from "./styles";
+import { Container, DeskContainer } from "./styles";
 import NavBar from "../../components/NavBar";
 import CheckoutScreen from "../CheckoutScreen/index";
 import SideFeed from "../../components/SideFeed";

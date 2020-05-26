@@ -74,7 +74,6 @@ function CheckoutScreen(props) {
                 flexDirection: "row",
                 display: "flex",
                 flex: 1,
-
                 width: "100%",
                 alignItems: "center",
               }}
