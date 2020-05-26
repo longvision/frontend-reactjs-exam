@@ -20,14 +20,14 @@ export const LogoItems = styled.div`
     display-direction: row;
     display: flex;
     width: 260px;
-    margin-left: 230px;
+    margin-left: 277px;
   }
   @media only screen and (min-width: 1919px) {
     justify-content: space-between;
     display-direction: row;
     display: flex;
     width: 260px;
-    margin-left: 230px;
+    margin-left: 277px;
   }
 `;
 
@@ -40,7 +40,7 @@ export const MenuItems = styled.div`
     justify-content: stretch;
     width: 572px;
     height: 100%;
-
+    margin-right: 277px;
     margin-left: 277px;
   }
   @media only screen and (min-width: 1919px) {
@@ -56,7 +56,7 @@ export const MenuItems = styled.div`
 `;
 export const Item = styled.div`
   @media only screen and (min-width: 361px) {
-    margin-right: 18px;
+    margin-right: 35px;
     background: #3c3c3c;
 
     width: 100px;

@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from "react";
+import { useSelector } from "react-redux";
 import "react-credit-cards/lib/styles.scss";
 import Card from "react-credit-cards";
 import { TextField, Button } from "@material-ui/core";
-import { NativeSelect } from "@material-ui/core";
+
 import ChevronLeftIcon from "@material-ui/icons/ChevronLeft";
 
 import logo from "../../assets/novo-cartao.svg";
+import PaymentInputs from "../../components/Input";
 import {
   Container,
   WhitePanel,
@@ -24,21 +26,19 @@ import {
   CreditCard,
   InputContainer,
 } from "./styles";
+
 import BreadCrumbs from "../../components/Breadcrumbs";
-import {
-  formatCreditCardNumber,
-  formatCVC,
-  formatExpirationDate,
-  useWindowSize,
-} from "../../utils";
+
+import { useWindowSize } from "../../utils";
 
 function CheckoutScreen(props) {
-  const [cvc, setCVC] = useState("");
-  const [expiry, setExpiry] = useState("");
-  const [focus, setFocus] = useState("");
-  const [name, setName] = useState("");
-  const [number, setNumber] = useState("");
+  const name = useSelector((state) => state.creditcard.name);
+  const cvc = useSelector((state) => state.creditcard.cvc);
+  const expiry = useSelector((state) => state.creditcard.expiry);
+  const number = useSelector((state) => state.creditcard.number);
+  const focus = useSelector((state) => state.creditcard.focus);
   const [issuer, setIssuer] = useState("");
+
   const size = useWindowSize();
 
   const handleCallback = ({ issuer }, isValid) => {
@@ -117,102 +117,18 @@ function CheckoutScreen(props) {
         <FormContainer>
           <Form>
             <InputContainer className="form-group">
-              <TextField
-                style={{
-                  width: "99%",
-                  fontSize: 22,
-                }}
-                size="medium"
-                placeholder="Número do cartão"
-                type="tel"
-                required
-                pattern="[\d| ]{16,22}"
-                name="number"
-                onChange={(e) =>
-                  setNumber(formatCreditCardNumber(e.target.value))
-                }
-                onFocus={(e) => setFocus(e.target.name)}
-              />
+              <PaymentInputs field="number" />
             </InputContainer>
             <InputContainer>
-              <TextField
-                style={{
-                  width: "99%",
-                  fontSize: 22,
-                }}
-                size="medium"
-                placeholder="Nome (Igual ao do cartão)"
-                type="input"
-                required
-                name="name"
-                onChange={(e) => setName(e.target.value)}
-                onFocus={(e) => setFocus(e.target.name)}
-              />
+              <PaymentInputs field="name" />
             </InputContainer>
             <SemiInputContainer>
-              <div style={{ width: "48%" }}>
-                <TextField
-                  style={{
-                    width: "99%",
-                    fontSize: 22,
-                    alignItems: "flex-start",
-                  }}
-                  size="medium"
-                  placeholder="Validade"
-                  type="tel"
-                  className="form-control"
-                  fullWidth={true}
-                  pattern="\d\d/\d\d"
-                  required
-                  name="expiry"
-                  onChange={(e) =>
-                    setExpiry(formatExpirationDate(e.target.value))
-                  }
-                  onFocus={(e) => setFocus(e.target.name)}
-                />
-              </div>
-              <div style={{ width: "48%" }}>
-                <TextField
-                  style={{
-                    width: "99%",
-                    fontSize: 22,
-                    alignItems: "flex-start",
-                  }}
-                  size="medium"
-                  placeholder="CVV"
-                  type="tel"
-                  fullWidth={true}
-                  required
-                  name="cvc"
-                  onChange={(e) => setCVC(formatCVC(e.target.value))}
-                  onFocus={(e) => setFocus(e.target.name)}
-                />
-              </div>
+              <PaymentInputs field="expiry" />
+              <PaymentInputs field="cvc" />
             </SemiInputContainer>
             <input type="hidden" name="issuer" value={issuer} />
             <InputContainer>
-              <NativeSelect
-                style={{
-                  width: "99%",
-                  fontSize: 22,
-                }}
-                name="number"
-                placeholder="Número do parcelas"
-                type="input"
-              >
-                <option value="12">12x R$1.000,00 sem juros</option>
-                <option value="11">11x R$ 990,00 sem juros</option>
-                <option value="10">10x R$950,00 sem juros</option>
-                <option value="9">9x R$1.000,00 sem juros</option>
-                <option value="8">8x R$1.000,00 sem juros</option>
-                <option value="7">7x R$1.000,00 sem juros</option>
-                <option value="6">6x R$1.000,00 sem juros</option>
-                <option value="5">5x R$1.000,00 sem juros</option>
-                <option value="4">4x R$1.000,00 sem juros</option>
-                <option value="3">3x R$1.000,00 sem juros</option>
-                <option value="2">2x R$1.000,00 sem juros</option>
-                <option value="1">1x R$1.000,00 sem juros</option>
-              </NativeSelect>
+              <PaymentInputs field="split" />
             </InputContainer>
 
             <SubmitContainer>

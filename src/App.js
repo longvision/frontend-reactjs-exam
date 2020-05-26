@@ -1,13 +1,16 @@
 import React from "react";
-import logo from "./logo.svg";
-import "./App.css";
+
+import { Provider } from "react-redux";
+import { createStore } from "redux";
 import ShopScreen from "./pages/ShopScreen";
+
+import store from "./store";
 
 function App() {
   return (
-    <div className="App">
+    <Provider store={store}>
       <ShopScreen />
-    </div>
+    </Provider>
   );
 }
 
