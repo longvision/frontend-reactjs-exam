@@ -64,7 +64,7 @@ export default function PaymentInputs({ field }) {
               borderTop: 0,
               borderLeft: 0,
               borderRight: 0,
-              borderBottomWidth: 1.7,
+              borderBottomWidth: 1.2,
               outline: "none",
             }}
             size="medium"
@@ -92,7 +92,7 @@ export default function PaymentInputs({ field }) {
               borderTop: 0,
               borderLeft: 0,
               borderRight: 0,
-              borderBottomWidth: 1.7,
+              borderBottomWidth: 1.2,
               outline: "none",
             }}
             required
@@ -119,7 +119,7 @@ export default function PaymentInputs({ field }) {
                 borderTop: 0,
                 borderLeft: 0,
                 borderRight: 0,
-                borderBottomWidth: 1.7,
+                borderBottomWidth: 1.2,
                 outline: "none",
               }}
               value={expiry}
@@ -150,7 +150,7 @@ export default function PaymentInputs({ field }) {
                 borderTop: 0,
                 borderLeft: 0,
                 borderRight: 0,
-                borderBottomWidth: 1.7,
+                borderBottomWidth: 1.2,
                 outline: "none",
               }}
               type="tel"
@@ -179,7 +179,7 @@ export default function PaymentInputs({ field }) {
                 borderTop: 0,
                 borderLeft: 0,
                 borderRight: 0,
-                borderBottomWidth: 1.7,
+                borderBottomWidth: 1.2,
                 borderColor: "#C3C3C3",
                 outline: "none",
               }}
